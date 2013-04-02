@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'mysql2'
+# gem 'mysql2'
 
 
 group :assets do
@@ -14,3 +14,4 @@ gem 'jquery-rails'
 gem 'watir-webdriver'
 gem 'nokogiri'
 
+gem 'pg'
