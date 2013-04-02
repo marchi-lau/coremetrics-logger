@@ -13,5 +13,5 @@ end
 gem 'jquery-rails'
 gem 'watir-webdriver'
 gem 'nokogiri'
-
+gem 'unicorn'
 # gem 'pg'

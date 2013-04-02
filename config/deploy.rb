@@ -1,5 +1,4 @@
 require "bundler/capistrano"
-
 load "config/recipes/base"
 load "config/recipes/nginx"
 load "config/recipes/unicorn"
