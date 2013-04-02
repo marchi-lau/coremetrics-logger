@@ -25,15 +25,15 @@ test:
   database: cx-coremetrics-logger_test
   pool: 5
   username: root
-  password:
+  password: 
   socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: cx-coremetrics-logger_production
+  database: cx-coremetrics_logger_production
   pool: 5
   username: root
-  password:
+  password: Qqweasdzxc123
   socket: /tmp/mysql.sock

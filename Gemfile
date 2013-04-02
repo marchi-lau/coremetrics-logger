@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
-# gem 'mysql2'
-
+gem 'rails', '3.2.13'
+gem 'mysql2'
+gem 'activerecord-mysql2-adapter'
+gem 'capistrano'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -14,4 +15,4 @@ gem 'jquery-rails'
 gem 'watir-webdriver'
 gem 'nokogiri'
 
-gem 'pg'
+# gem 'pg'
