@@ -1,0 +1,53 @@
+<style type="text/css">
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+<p id="notice"><%= notice %></p>
+
+<p>
+	<h2>Page: <%= @tag.parameters['pi']%></h2>
+	<h2>Product: <%= @tag.parameters['pr']%></h2>
+	<h2>Order: <%= @tag.parameters['on']%></h2>
+	
+</p>
+
+<p>
+  <b>Parameter:</b>
+	<table class="gridtable">
+		<tr>
+			<th width="100">Attribute Name</th>
+			<th>Key</th>
+			<th>Value</th>
+		</tr>
+  		<% @tag.parameters.to_a.each do |parameter| %>
+
+
+		<tr>
+			<td align="right"><%= TagAttribute.find_by_key(parameter[0]).try(:name) %></td>
+			<td align="center"><%= parameter[0]%></td>
+			<td><%= parameter[1]%></td>
+		</tr>
+		<% end %>
+	</table>
+	
+</p>

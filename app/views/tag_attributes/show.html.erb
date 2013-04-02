@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Key:</b>
+  <%= @tag_attribute.key %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @tag_attribute.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_tag_attribute_path(@tag_attribute) %> |
+<%= link_to 'Back', tag_attributes_path %>

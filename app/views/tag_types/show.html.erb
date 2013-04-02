@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tag_type.name %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @tag_type.tag_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_tag_type_path(@tag_type) %> |
+<%= link_to 'Back', tag_types_path %>

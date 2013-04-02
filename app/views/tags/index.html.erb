@@ -1,0 +1,59 @@
+<style type="text/css">
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+<table class="gridtable">
+  <tr>
+	<th>id</th>
+    <th width= "200px;">Tag</th>
+    <th width="300px;">Page ID</th>
+    <th width="300px;">Product ID</th>
+	<th width="100px;">Country ID</th>
+    <th width="300px;">Client ID</th>
+	<th width="120px;">Created at</th>
+    <th></th>
+    <!-- <th></th>
+    <th></th> -->
+  </tr>
+
+<% @tags.each do |tag| %>
+  <tr>
+	<td><%= tag.id %></td>
+    <td><% if tag.tag_type.nil?  %>
+			<%= tag.tid %>
+		<% else %>
+		<%= tag.tag_type.name%>
+		<% end %>
+	</td>
+    <td><%= tag.parameters['pv_a1'] %></td>
+    <td><%= tag.parameters['pr'] %></td>
+	<td><%= tag.parameters['cg'].split("_").last %>
+    <td><%= Account.find_by_client_id(tag.parameters['ci'].split(";").first.sub("60","90")).try(:name)  %>
+	<br/><%= Account.find_by_client_id(tag.parameters['ci'].split(";")[1].sub("60","90")).try(:name) %>
+	</td>
+	<td><%= tag.created_at %></td>
+
+    <td><%= link_to 'Show', tag %> | <%= link_to "Excel", tag_path(tag) + '.xls' %> | <%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
