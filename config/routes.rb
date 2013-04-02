@@ -6,7 +6,7 @@ CxCoremetricsLogger::Application.routes.draw do
   resources :tag_attributes
 
   resources :tags
-  match 'eluminate' => 'eluminate#log' 
+  match 'cm' => 'eluminate#log' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
