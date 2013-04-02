@@ -47,7 +47,7 @@ table.gridtable td {
 	</td>
     <td><%= tag.parameters['pv_a1'] %></td>
     <td><%= tag.parameters['pr'] %></td>
-	<td><%= tag.parameters['cg'].split("_").try(:last) %>
+	<td><%= tag.parameters['cg'] %></td>
     <td><%= Account.find_by_client_id(tag.parameters['ci'].split(";").first.sub("60","90")).try(:name)  %>
 	<br/><%= Account.find_by_client_id(tag.parameters['ci'].split(";")[1].sub("60","90")).try(:name) %>
 	</td>
