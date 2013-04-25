@@ -22,12 +22,20 @@ table.gridtable td {
 	background-color: #ffffff;
 }
 </style>
+
 <table class="gridtable">
   <tr>
 	<th>id</th>
     <th width= "200px;">Tag</th>
     <th width="300px;">Page ID</th>
+    <th width="300px;">Order ID</th>
+
     <th width="300px;">Product ID</th>
+	<th width="100px;">Total</th>
+    <th width="100px;">Service Charge</th>
+	<th width="100px;">Subtotal</th>
+    <th width="100px;">Qty</th>
+	
 	<th width="100px;">Country ID</th>
     <th width="300px;">Client ID</th>
 	<th width="120px;">Created at</th>
@@ -42,11 +50,18 @@ table.gridtable td {
     <td><% if tag.tag_type.nil?  %>
 			<%= tag.tid %>
 		<% else %>
-		<%= tag.tag_type.name%>
+			<%= tag.tag_type.name %>
 		<% end %>
 	</td>
-    <td><%= tag.parameters['pv_a1'] %></td>
+	
+    <td><%= tag.parameters['pi'] %></td>
+    <td><%= tag.parameters['on'] %></td>
     <td><%= tag.parameters['pr'] %></td>
+    <td><%= tag.parameters['tr'] %></td>
+    <td><%= tag.parameters['sg'] %></td>
+    <td><%= tag.parameters['bp'] %></td>
+    <td><%= tag.parameters['qt'] %></td>
+
 	<td><%= tag.parameters['cg'] %></td>
     <td><%= Account.find_by_client_id(tag.parameters['ci'].split(";").first.sub("60","90")).try(:name)  %>
 	<br/><%= Account.find_by_client_id(tag.parameters['ci'].split(";")[1].sub("60","90")).try(:name) %>
